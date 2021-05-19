@@ -20,21 +20,21 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="lkX-8a-xrw">
                                 <rect key="frame" x="120" y="10" width="174" height="586"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sms-dO-QN0">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sms-dO-QN0" userLabel="RedView">
                                         <rect key="frame" x="0.0" y="0.0" width="174" height="174"/>
                                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Sms-dO-QN0" secondAttribute="height" multiplier="1:1" id="H61-TG-t3y"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dEj-t0-Zj6">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dEj-t0-Zj6" userLabel="YellowView">
                                         <rect key="frame" x="0.0" y="206" width="174" height="174"/>
                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="dEj-t0-Zj6" secondAttribute="height" multiplier="1:1" id="MxD-Yp-xQO"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fAv-DL-x2p">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fAv-DL-x2p" userLabel="GreenView">
                                         <rect key="frame" x="0.0" y="412" width="174" height="174"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <constraints>
@@ -47,9 +47,12 @@
                                 <rect key="frame" x="20" y="684" width="374" height="42"/>
                                 <color key="backgroundColor" red="0.34919636840000001" green="0.65252341869999997" blue="0.91325291450000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="START">
+                                <state key="normal" title="NEXT">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="tappedNextButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4fY-O8-CJG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -65,6 +68,12 @@
                             <constraint firstItem="lkX-8a-xrw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="uD5-4J-ggN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="greenView" destination="fAv-DL-x2p" id="NUB-Kq-VUP"/>
+                        <outlet property="nextButton" destination="Boh-RY-gR3" id="Lqh-2T-IGN"/>
+                        <outlet property="redView" destination="Sms-dO-QN0" id="gGB-ou-KCr"/>
+                        <outlet property="yellowView" destination="dEj-t0-Zj6" id="vf1-Dm-Jme"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
