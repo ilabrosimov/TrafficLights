@@ -6,7 +6,9 @@
 //
 
 import UIKit
-
+enum CurrentLight {
+    case red, yellow, green
+}
 class ViewController: UIViewController {
 
     //MARK: - IB Outlets
@@ -16,9 +18,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     
     //MARK: - Constants
-    let RADIUS_OF_TRAFFIC_LIGHT :CGFloat = 40
-    let TURN_OFF_THE_LIGHT :CGFloat = 0.3
-    let TURN_ON_THE_LIGHT : CGFloat = 1
+    private var currentLight: CurrentLight = .red
+    private let lightIsOff :CGFloat = 0.3
+    private let lightIsOn : CGFloat = 1
     
     //MARK: - Life Cycle Methods
     override func viewDidLoad() {
@@ -33,7 +35,7 @@ class ViewController: UIViewController {
     @IBAction func tappedNextButton(_ sender: UIButton) {
         if nextButton.titleLabel?.text == "START" {
             nextButton.setTitle("NEXT", for: .normal)
-            redView.alpha = TURN_ON_THE_LIGHT
+            redView.alpha = lightIsOn
         } else {
             turnNextTrafficLight(redAlpha: redView.alpha, yellowAlpha: yellowView.alpha, greenAlpha: greenView.alpha)
             
@@ -45,35 +47,32 @@ class ViewController: UIViewController {
     //MARK: - Methods
 
     func turnNextTrafficLight(redAlpha:CGFloat, yellowAlpha:CGFloat, greenAlpha:CGFloat)  {
-        switch TURN_ON_THE_LIGHT  {
-        case redAlpha: do {
-            redView.alpha = TURN_OFF_THE_LIGHT
-            yellowView.alpha = TURN_ON_THE_LIGHT
-        }
-        case yellowAlpha: do {
-            yellowView.alpha = TURN_OFF_THE_LIGHT
-            greenView.alpha = TURN_ON_THE_LIGHT
-        }
-        case greenAlpha:  do {
-            greenView.alpha = TURN_OFF_THE_LIGHT
-            redView.alpha = TURN_ON_THE_LIGHT
-        }
-            
-        default:
-            print("Что-то случилось")
+        switch currentLight  {
+        case .red:
+            redView.alpha = lightIsOff
+            yellowView.alpha = lightIsOn
+            currentLight = .yellow
+        case .yellow:
+            yellowView.alpha = lightIsOff
+            greenView.alpha = lightIsOn
+            currentLight = .green
+        case .green:
+            greenView.alpha = lightIsOff
+            redView.alpha = lightIsOn
+            currentLight = .red
         }
     }
     
     func turnOffTrafficLights() {
-        redView.alpha = TURN_OFF_THE_LIGHT
-        yellowView.alpha = TURN_OFF_THE_LIGHT
-        greenView.alpha = TURN_OFF_THE_LIGHT
+        redView.alpha = lightIsOff
+        yellowView.alpha = lightIsOff
+        greenView.alpha = lightIsOff
     }
     
     func makeRoundTheLights() {
-        redView.layer.cornerRadius = RADIUS_OF_TRAFFIC_LIGHT
-        yellowView.layer.cornerRadius = RADIUS_OF_TRAFFIC_LIGHT
-        greenView.layer.cornerRadius = RADIUS_OF_TRAFFIC_LIGHT
+        redView.layer.cornerRadius = redView.frame.width / 2
+        yellowView.layer.cornerRadius = redView.frame.width / 2
+        greenView.layer.cornerRadius = redView.frame.width / 2
     }
 }
 

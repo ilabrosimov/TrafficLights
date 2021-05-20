@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -14,37 +14,28 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TrafficLights" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="lkX-8a-xrw">
-                                <rect key="frame" x="120" y="10" width="174" height="586"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="lkX-8a-xrw">
+                                <rect key="frame" x="120" y="10" width="80" height="392"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sms-dO-QN0" userLabel="RedView">
-                                        <rect key="frame" x="0.0" y="0.0" width="174" height="174"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="109.5"/>
                                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="Sms-dO-QN0" secondAttribute="height" multiplier="1:1" id="H61-TG-t3y"/>
-                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dEj-t0-Zj6" userLabel="YellowView">
-                                        <rect key="frame" x="0.0" y="206" width="174" height="174"/>
+                                        <rect key="frame" x="0.0" y="141.5" width="80" height="109"/>
                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="dEj-t0-Zj6" secondAttribute="height" multiplier="1:1" id="MxD-Yp-xQO"/>
-                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fAv-DL-x2p" userLabel="GreenView">
-                                        <rect key="frame" x="0.0" y="412" width="174" height="174"/>
+                                        <rect key="frame" x="0.0" y="282.5" width="80" height="109.5"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="fAv-DL-x2p" secondAttribute="height" multiplier="1:1" id="Avh-N5-zSC"/>
-                                        </constraints>
                                     </view>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Boh-RY-gR3">
-                                <rect key="frame" x="20" y="684" width="374" height="42"/>
+                                <rect key="frame" x="20" y="516" width="280" height="42"/>
                                 <color key="backgroundColor" red="0.34919636840000001" green="0.65252341869999997" blue="0.91325291450000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="NEXT">
@@ -60,6 +51,7 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lkX-8a-xrw" secondAttribute="trailing" constant="120" id="2T2-e1-6ZH"/>
                             <constraint firstItem="lkX-8a-xrw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="4hK-5y-ORM"/>
+                            <constraint firstItem="Boh-RY-gR3" firstAttribute="top" secondItem="lkX-8a-xrw" secondAttribute="bottom" constant="114" id="DQf-UL-y6U"/>
                             <constraint firstItem="Boh-RY-gR3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Mev-Sb-m7s"/>
                             <constraint firstItem="Boh-RY-gR3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TTw-Hg-1Qg"/>
                             <constraint firstItem="lkX-8a-xrw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jWP-m7-pmC"/>
